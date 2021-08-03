@@ -1,0 +1,23 @@
+syntax = "proto3";
+option go_package ="./test";
+//package message;
+
+enum STATUS {
+    WAIT = 0;
+    READY = 1;
+    RUNING = 3;
+    DONE = 4;
+    EXIT = 5;
+}
+
+
+message PlayerInfo {
+    string nickname = 1;
+    string headImageUrl = 2;
+    string address = 3;
+    fixed64 gender = 4;
+    string privileges = 5;
+    fixed64 uid = 6;
+    fixed64 coin = 7;
+}
+
