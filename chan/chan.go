@@ -150,12 +150,13 @@ var ch1 chan int
 func fuzhi() {
 	for i := 0; i < 10; i++ {
 		ch1 <- i
+		fmt.Println("写入chan.:", i)
 	}
 	//close(ch1)
 }
 
 func main() {
-	ch1 = make(chan int, 6)
+	ch1 = make(chan int, 20)
 	go fuzhi()
 	//在main goroutine线，期望从管道中获得一个数据，而这个数据必须是其他goroutine线放入管道的
 	//但是其他goroutine线都已经执行完了(all goroutines are asleep)，那么就永远不会有数据放入管道。
@@ -171,7 +172,7 @@ func main() {
 	}*/
 	go func() {
 		for i := range ch1 {
-			fmt.Println(i)
+			fmt.Println("从通道中读取的参数", i)
 		}
 	}()
 	for {

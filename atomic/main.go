@@ -53,6 +53,12 @@ type Atomic struct {
 	counter int64
 }
 
+var (
+	a = Atomic{
+		counter: 10,
+	}
+)
+
 func (a *Atomic) Inc() {
 	atomic.AddInt64(&a.counter, 1)
 }
