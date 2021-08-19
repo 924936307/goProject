@@ -34,6 +34,6 @@ Go 实现百万 WebSocket 连接 ：https://studygolang.com/articles/22501
         测试业务
         有状态应用不宜使用抢占式实例，例如数据库。因为竞价失败等原因导致抢占式实例被释放时，应用状态难以保存。
 
-go语言的启动加载顺序 ：https://blog.csdn.net/claram/article/details/77745665
+go语言的启动加载顺序 ：https://blog.csdn.net/claram/article/details/77745665  
 
 
